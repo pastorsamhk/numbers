@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊圖表：民數記的曠野之旅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .flow-line::after {
+            content: '▼';
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #005F73;
+            margin: 0.5rem 0;
+        }
+        .flow-box {
+            border: 2px solid #0A9396;
+            background-color: #ffffff;
+            color: #005F73;
+        }
+        .pentecostal-card {
+            background: linear-gradient(135deg, #0A9396, #005F73);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#005F73] mb-2 text-shadow">曠野中的神蹟與信心</h1>
+            <p class="text-xl md:text-2xl text-[#0A9396] font-bold">民數記的五旬宗視角深度解析</p>
+        </header>
+
+        <section id="introduction" class="mb-12 text-center max-w-4xl mx-auto">
+            <p class="text-lg text-gray-700">民數記不僅是一本古老的歷史書，它更是一面反映我們信仰旅程的鏡子。它記載了上帝的子民如何在「曠野」這個屬靈的熔爐中被試煉、管教與塑造。本資訊圖表將帶您從五旬宗的視角，重新審視這段旅程，看見上帝不變的信實、聖靈超自然的作為，以及信心如何成為領受應許的唯一鑰匙。</p>
+        </section>
+
+        <section id="two-names" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-6 text-center border-t-8 border-[#EE9B00]">
+                <h2 class="text-3xl font-bold text-[#CA6702] mb-3">Bemidbar (בְּמִדְבַּר)</h2>
+                <p class="text-lg font-semibold text-gray-600 mb-4">「在曠野」</p>
+                <p class="text-gray-700">這不僅是一個地理位置，更是上帝的教室。在這裡，上帝透過雲柱火柱親自引導，透過嗎哪和水超自然供應，祂的同在從未離開。曠野是上帝試驗、管教並塑造祂子民的地方。</p>
+                 <div class="flex justify-center space-x-6 mt-6 text-4xl text-[#CA6702]">
+                    <span>☁️</span>
+                    <span>🔥</span>
+                    <span>💧</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-xl p-6 text-center border-t-8 border-[#0A9396]">
+                <h2 class="text-3xl font-bold text-[#005F73] mb-3">Arithmoi (Ἀριθμοί)</h2>
+                <p class="text-lg font-semibold text-gray-600 mb-4">「數字」</p>
+                <p class="text-gray-700">書中兩次關鍵的人口普查，劃分了兩個世代。第一代因不信而倒斃曠野；第二代則是在曠野中被塑造、學習信靠，最終預備好進入並承受應許之地。數字的背後，是屬靈的傳承與成長。</p>
+                 <div class="flex justify-center space-x-6 mt-6 text-4xl text-[#005F73]">
+                    <span>一代 ➡️</span>
+                    <span>二代 ✝️</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="divine-classroom" class="mb-16 text-center p-8 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-2">曠野：上帝的屬靈課堂</h2>
+            <p class="max-w-3xl mx-auto text-gray-700 mb-8">上帝讓以色列人漂流四十年，並非毫無目的。這是一場精心設計的屬靈門徒訓練，旨在煉淨祂的子民，使其真正配得聖約之民的身份。</p>
+            <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-4">
+                <div class="flow-box p-4 rounded-lg shadow-md w-full md:w-1/4">
+                    <h3 class="text-xl font-bold">接受管教</h3>
+                    <p>學習認識上帝的權柄與聖潔。</p>
+                </div>
+                <div class="hidden md:block flow-line w-1/12"></div>
+                 <div class="md:hidden flow-line"></div>
+                <div class="flow-box p-4 rounded-lg shadow-md w-full md:w-1/4">
+                    <h3 class="text-xl font-bold">重新認識神</h3>
+                    <p>在實際生活中經歷祂的信實與法則。</p>
+                </div>
+                <div class="hidden md:block flow-line w-1/12"></div>
+                <div class="md:hidden flow-line"></div>
+                <div class="flow-box p-4 rounded-lg shadow-md w-full md:w-1/4">
+                    <h3 class="text-xl font-bold">造就新一代</h3>
+                    <p>擺脫奴隸心態，培養信靠的品格。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="twelve-spies" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-black text-[#AE2012]">信心的岔路口：十二探子的報告</h2>
+                <p class="max-w-3xl mx-auto text-gray-700 mt-2">在加低斯巴尼亞，以色列人面臨關鍵抉擇。他們所看見的事實相同，但詮釋事實的眼光卻截然不同，這決定了他們截然不同的命運。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-2xl p-6">
+                    <h3 class="text-2xl font-bold text-gray-500 mb-4 text-center">多數人的報告：眼見的巨人</h3>
+                    <p class="text-gray-700 mb-6">十個探子雖然承認那地是美地，但他們的眼光完全被困難所占據。他們看見高大的敵人、堅固的城牆，最終得出「我們不能」的結論。這份基於恐懼的報告，在百姓中散播了不信的瘟疫。</p>
+                    <div class="chart-container">
+                        <canvas id="spiesReportChart"></canvas>
+                    </div>
+                     <p class="text-center mt-4 text-gray-600">此圖表顯示，十位探子與約書亞、迦勒在報告時關注焦點的巨大差異。多數人聚焦於眼前的障礙，而有信心者則定睛於上帝的應許。</p>
+                </div>
+                 <div class="bg-white rounded-2xl shadow-2xl p-6 flex flex-col justify-center items-center text-center">
+                    <h3 class="text-2xl font-bold text-[#0A9396] mb-4">信心的宣告</h3>
+                    <p class="text-xl text-gray-800 mb-6">「耶和華若喜悅我們，就必將我們領進那地...<br> <span class="font-bold text-3xl text-[#005F73] mt-2 block">我們足能得勝！</span>」</p>
+                    <div class="bg-[#94D2BD] p-6 rounded-xl w-full">
+                        <h4 class="font-bold text-xl text-[#005F73]">信心的結果：</h4>
+                        <ul class="list-none mt-2 text-left space-y-2 text-lg text-gray-900">
+                            <li><span class="text-[#005F73] mr-2">✅</span> <strong>迦勒與約書亞：</strong>進入應許之地，承受產業。</li>
+                            <li><span class="text-[#AE2012] mr-2">❌</span> <strong>十個探子與那世代：</strong>在曠野漂流四十年，錯失應許。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bronze-serpent" class="mb-16">
+             <div class="text-center mb-8">
+                <h2 class="text-4xl font-black text-[#9B2226]">絕望中的救贖：銅蛇與醫治</h2>
+                <p class="max-w-3xl mx-auto text-gray-700 mt-2">當百姓因犯罪而被火蛇所咬時，上帝提供了一個看似不合邏輯、卻滿有恩典的救法。這個事件不僅是歷史，更是對基督救贖最清晰的預表。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="md:col-span-3 bg-white rounded-2xl shadow-xl p-6">
+                     <h3 class="text-2xl font-bold text-center text-[#9B2226] mb-4">從審判到醫治的路徑</h3>
+                    <p class="text-gray-700 mb-6">火蛇事件揭示了一個深刻的屬靈原則：罪帶來死亡，但悔改與信心能開啟上帝超自然的醫治與救贖。上帝的解決方案，往往超越人的理性。</p>
+                    <div class="chart-container h-[320px] md:h-[400px]">
+                        <canvas id="serpentHealingChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-600">此環圈圖展示了得醫治的過程。核心在於一個簡單的信心行動：「仰望」，這預表了新約信徒因信耶穌而得救。</p>
+                </div>
+                 <div class="md:col-span-2 bg-white rounded-2xl shadow-xl p-6 flex flex-col justify-center items-center text-center">
+                    <div class="text-6xl mb-4 text-[#BB3E03]">✝️</div>
+                    <h3 class="text-2xl font-bold text-[#9B2226] mb-2">最清晰的預表</h3>
+                    <p class="italic text-lg text-gray-700">「摩西在曠野怎樣舉蛇，人子也必照樣被舉起來，叫一切信他的都得永生。」</p>
+                    <p class="font-bold text-gray-600 mt-1">- 約翰福音 3:14-15</p>
+                    <hr class="my-4 border-t-2 border-[#E9D8A6]">
+                    <p class="text-gray-800">十字架，如同被舉起的銅蛇，將咒詛的刑具轉化為救恩的記號。凡仰望那為我們成為罪的基督，就必得醫治與永生。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pentecostal-application" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-black text-[#0A9396]">五旬宗的應用：在曠野中與神同行</h2>
+                <p class="max-w-3xl mx-auto text-gray-700 mt-2">民數記中的神蹟並非遙遠的歷史，而是上帝不變本性的彰顯。對於五旬宗信徒而言，這些事件強化了我們對聖靈在當今時代超自然工作的期待。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="pentecostal-card rounded-2xl shadow-xl p-6 text-white">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-[#E9D8A6]">昨日與今日的平行</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-[#94D2BD]">
+                                    <th class="p-2 text-lg">曠野中的彰顯</th>
+                                    <th class="p-2 text-lg">今日聖靈的工作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-white/30">
+                                    <td class="p-2">☁️🔥 雲柱火柱</td>
+                                    <td class="p-2">內住聖靈的引導</td>
+                                </tr>
+                                <tr class="border-b border-white/30">
+                                    <td class="p-2">💧🍞 神奇供應</td>
+                                    <td class="p-2">耶和華以勒 (供應的主)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">🐍✝️ 銅蛇醫治</td>
+                                    <td class="p-2">耶和華拉法 (醫治的主)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p class="mt-4">上帝的屬性永不改變。祂過去如何引導、供應、醫治，今日也同樣透過聖靈在信徒生命中行作大事。</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-6">
+                     <h3 class="text-2xl font-bold text-center text-[#005F73] mb-4">信仰核心主題</h3>
+                    <p class="text-gray-700 mb-6">民數記的故事強化了五旬宗信仰的幾個核心主題。雷達圖顯示了這些主題在書中得到的支持與印證，鼓勵我們活出經歷性的信仰。</p>
+                    <div class="chart-container">
+                        <canvas id="pentecostalThemesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 pt-8 border-t-2 border-[#94D2BD]">
+            <h3 class="text-3xl font-black text-[#005F73] mb-4">永恆的功課</h3>
+            <p class="text-xl text-gray-800 max-w-3xl mx-auto">曠野不是終點，而是通往應許的道路。上帝的信實遠勝過我們的軟弱。我們被呼召活出迦勒與約書亞的信心，超越眼見的困難，定睛於上帝永不落空的應許，並在聖靈的能力中，勇敢前行。</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function wrapText(text, maxWidth) {
+            if (typeof text !== 'string' || text.length <= maxWidth) {
+                return text;
+            }
+            const words = text.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+        
+        const chartColors = {
+            blue: '#0A9396',
+            darkBlue: '#005F73',
+            red: '#AE2012',
+            orange: '#EE9B00',
+            lightTeal: '#94D2BD',
+            darkRed: '#9B2226'
+        };
+
+        const spiesCtx = document.getElementById('spiesReportChart').getContext('2d');
+        new Chart(spiesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['十個探子 (懼怕)', '迦勒與約書亞 (信心)'],
+                datasets: [{
+                    label: '專注於障礙',
+                    data: [90, 10],
+                    backgroundColor: chartColors.red,
+                    borderColor: chartColors.darkRed,
+                    borderWidth: 2
+                }, {
+                    label: '專注於神的應許',
+                    data: [10, 90],
+                    backgroundColor: chartColors.blue,
+                    borderColor: chartColors.darkBlue,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: {
+                           callback: function(value) {
+                                return value + '%'
+                            }
+                        }
+                    },
+                    y: {
+                        stacked: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '兩種報告的關注焦點對比',
+                        font: { size: 16, weight: 'bold' },
+                        color: chartColors.darkBlue
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const serpentCtx = document.getElementById('serpentHealingChart').getContext('2d');
+        new Chart(serpentCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['犯罪與抱怨', '神的審判 (火蛇)', '悔改與代求', '信心的行動 (仰望)'],
+                datasets: [{
+                    label: '醫治路徑',
+                    data: [25, 25, 25, 25],
+                    backgroundColor: [
+                        '#BB3E03',
+                        '#9B2226',
+                        '#94D2BD',
+                        '#0A9396'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 3,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const themesCtx = document.getElementById('pentecostalThemesChart').getContext('2d');
+        new Chart(themesCtx, {
+            type: 'radar',
+            data: {
+                labels: ['經歷性信心', '聖靈引導', '神聖醫治', '超自然供應', '順服的重要'],
+                datasets: [{
+                    label: '民數記中的印證強度',
+                    data: [9, 8, 9, 8, 7],
+                    fill: true,
+                    backgroundColor: 'rgba(10, 147, 150, 0.2)',
+                    borderColor: 'rgb(10, 147, 150)',
+                    pointBackgroundColor: 'rgb(10, 147, 150)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(10, 147, 150)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            },
+                            color: chartColors.darkBlue
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            color: chartColors.darkBlue,
+                            stepSize: 2
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
